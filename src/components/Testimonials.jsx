@@ -25,11 +25,11 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative bg-white py-20">
+    <section id="testimonials" className="relative bg-white py-20 dark:bg-black">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">What clients say</h2>
-          <p className="mt-3 text-gray-600">Real feedback from students who completed on time.</p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">What clients say</h2>
+          <p className="mt-3 text-gray-600 dark:text-gray-300/80">Real feedback from students who completed on time.</p>
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -40,17 +40,17 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white"
             >
-              <Quote className="absolute -top-4 -left-4 h-8 w-8 text-indigo-200" />
+              <Quote className="absolute -top-4 -left-4 h-8 w-8 text-indigo-200/60" />
               <div className="flex items-center gap-1 text-amber-500">
                 {Array.from({ length: 5 }).map((_, idx) => (
                   <Star key={idx} className="h-4 w-4 fill-amber-400" />
                 ))}
               </div>
-              <p className="mt-4 text-gray-700">“{t.quote}”</p>
-              <footer className="mt-4 text-sm text-gray-500">
-                <span className="font-medium text-gray-900">{t.name}</span> · {t.role}
+              <p className="mt-4 text-gray-700 dark:text-gray-200">“{t.quote}”</p>
+              <footer className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                <span className="font-medium text-gray-900 dark:text-white">{t.name}</span> · {t.role}
               </footer>
             </motion.blockquote>
           ))}

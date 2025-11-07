@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-white text-gray-900 dark:bg-black dark:text-white">
       <Navbar />
       <main className="flex flex-col">
         <AnimatedHero />

@@ -28,8 +28,8 @@ export default function Services() {
   return (
     <section id="services" className="relative mx-auto max-w-6xl px-6 py-20">
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">How I Help</h2>
-        <p className="mt-3 text-gray-600">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">How I Help</h2>
+        <p className="mt-3 text-gray-600 dark:text-gray-300/80">
           Practical, results-focused support tailored to your discipline and timeline.
         </p>
       </div>
@@ -38,13 +38,13 @@ export default function Services() {
         {services.map(({ icon: Icon, title, desc }) => (
           <div
             key={title}
-            className="group rounded-2xl border border-gray-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-md"
+            className="group rounded-2xl border border-gray-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300">
               <Icon className="h-6 w-6" />
             </div>
-            <h3 className="mt-4 text-lg font-semibold text-gray-900">{title}</h3>
-            <p className="mt-2 text-sm text-gray-600">{desc}</p>
+            <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300/80">{desc}</p>
           </div>
         ))}
       </div>
