@@ -9,7 +9,7 @@ export default function AnimatedHero() {
     const body = encodeURIComponent(
       'Hi, I would love to discuss guidance for my thesis.\n\nMy topic: \nTimeline: \nUniversity: \n\nThanks!'
     );
-    window.location.href = `mailto:hello@yourdomain.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:thesiswritingpk@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -34,7 +34,7 @@ export default function AnimatedHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mx-auto inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1 text-sm backdrop-blur"
-        >
+       >
           <BookOpen className="h-4 w-4" />
           Thesis Writing PK
         </motion.span>

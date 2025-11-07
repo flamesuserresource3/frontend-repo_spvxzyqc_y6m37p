@@ -14,7 +14,7 @@ export default function Contact() {
 
     const subject = encodeURIComponent(`Thesis Inquiry from ${name}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:hello@yourdomain.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:thesiswritingpk@gmail.com?subject=${subject}&body=${body}`;
     setStatus('Opening your email client...');
   };
 

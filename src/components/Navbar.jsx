@@ -16,7 +16,7 @@ export default function Navbar() {
           <a href="#testimonials" className="hover:text-gray-900 dark:hover:text-white">Feedback</a>
           <a href="#blog" className="hover:text-gray-900 dark:hover:text-white">Blog</a>
           <a
-            href="mailto:hello@yourdomain.com"
+            href="mailto:thesiswritingpk@gmail.com"
             className="inline-flex items-center gap-2 rounded-md bg-black/5 px-3 py-2 font-medium text-gray-900 hover:bg-black/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/20"
           >
             <User className="h-4 w-4" /> Hire Me
