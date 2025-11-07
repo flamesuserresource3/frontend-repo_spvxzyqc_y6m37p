@@ -1,52 +1,54 @@
-import React from 'react';
-import { FileText, Layout, PenTool, Presentation } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { BookOpen, FileText, BarChart2, PenTool } from 'lucide-react';
 
 const services = [
   {
+    icon: BookOpen,
+    title: 'Topic & Proposal',
+    desc: 'Shortlist research topics and craft a compelling proposal with clear objectives and methodology.'
+  },
+  {
     icon: FileText,
-    title: 'Research Proposal',
-    desc: 'Define a clear problem, scope, and methodology with a strong, defensible proposal.',
+    title: 'Literature Review',
+    desc: 'Comprehensive, up-to-date review mapped to your research questions and framework.'
+  },
+  {
+    icon: BarChart2,
+    title: 'Data Analysis',
+    desc: 'Quantitative (SPSS, SmartPLS, AMOS) and qualitative (NVivo) analysis with clear interpretation.'
   },
   {
     icon: PenTool,
-    title: 'Writing & Editing',
-    desc: 'Structure chapters, refine arguments, and polish language to academic standards.',
-  },
-  {
-    icon: Layout,
-    title: 'Formatting & Citations',
-    desc: 'Compliant with APA, MLA, Chicago, IEEE, and university-specific styles.',
-  },
-  {
-    icon: Presentation,
-    title: 'Defense Preparation',
-    desc: 'Create concise slides and rehearse Q&A to deliver a confident defense.',
-  },
+    title: 'Editing & Formatting',
+    desc: 'Polishing, citation management, and formatting per your university’s style guide.'
+  }
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="relative mx-auto max-w-6xl px-6 py-20">
-      <div className="text-center">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">How I Help</h2>
-        <p className="mt-3 text-gray-600 dark:text-gray-300/80">
-          Practical, results-focused support tailored to your discipline and timeline.
-        </p>
-      </div>
+    <section id="services" className="py-16 md:py-24 bg-white dark:bg-zinc-900">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">Services</h2>
+        <p className="mt-2 text-zinc-600 dark:text-zinc-300">Everything you need from start to submission.</p>
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {services.map(({ icon: Icon, title, desc }) => (
-          <div
-            key={title}
-            className="group rounded-2xl border border-gray-200 bg-white/70 p-6 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-md dark:border-white/10 dark:bg-white/5 dark:shadow-none"
-          >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-300">
-              <Icon className="h-6 w-6" />
-            </div>
-            <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300/80">{desc}</p>
-          </div>
-        ))}
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((s, idx) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: idx * 0.06 }}
+              className="group rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 bg-white/70 dark:bg-zinc-900/70 backdrop-blur hover:shadow-md hover:-translate-y-0.5 transition"
+            >
+              <div className="h-10 w-10 rounded-xl bg-zinc-900/90 dark:bg-zinc-100/90 flex items-center justify-center text-white dark:text-zinc-900">
+                <s.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-semibold text-zinc-900 dark:text-white">{s.title}</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{s.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

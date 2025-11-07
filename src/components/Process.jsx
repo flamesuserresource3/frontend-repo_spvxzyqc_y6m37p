@@ -1,47 +1,36 @@
-import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Search, Goal, Brain, CheckCircle2 } from 'lucide-react';
 
 const steps = [
-  {
-    title: 'Discovery',
-    desc: 'Discuss goals, requirements, and your timeline. Align on scope and deliverables.'
-  },
-  {
-    title: 'Plan',
-    desc: 'Outline chapters, research milestones, and checkpoints with a realistic schedule.'
-  },
-  {
-    title: 'Create',
-    desc: 'Iterative drafting, editing, and feedback cycles to keep momentum and quality high.'
-  },
-  {
-    title: 'Defend',
-    desc: 'Finalize formatting, rehearse the defense, and wrap with submission-ready files.'
-  }
+  { icon: Search, title: '1. Discovery', desc: 'We align on goals, scope, and timelines.' },
+  { icon: Goal, title: '2. Outline', desc: 'You approve a clear structure and milestones.' },
+  { icon: Brain, title: '3. Draft & Analyze', desc: 'Iterative writing with data analysis and feedback.' },
+  { icon: CheckCircle2, title: '4. Finalize', desc: 'Editing, formatting, and viva preparation.' }
 ];
 
 export default function Process() {
   return (
-    <section id="process" className="relative bg-gradient-to-b from-white to-indigo-50/40 py-20 dark:from-black dark:to-indigo-950/20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">Process</h2>
-          <p className="mt-3 text-gray-600 dark:text-gray-300/80">Clear milestones so you always know what’s next.</p>
-        </div>
+    <section id="process" className="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-950">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white tracking-tight">Process</h2>
+        <p className="mt-2 text-zinc-600 dark:text-zinc-300">A transparent, milestone-driven approach.</p>
 
-        <ol className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((s, idx) => (
-            <li key={s.title} className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/5 dark:shadow-none">
-              <div className="absolute -top-3 -left-3 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white dark:bg-indigo-500">
-                {idx + 1}
+            <motion.li
+              key={s.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: idx * 0.06 }}
+              className="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 bg-white dark:bg-zinc-900"
+            >
+              <div className="h-10 w-10 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 flex items-center justify-center">
+                <s.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-white">{s.title}</h3>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-300/80">{s.desc}</p>
-              <div className="mt-4 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
-                <CheckCircle2 className="h-5 w-5" />
-                Milestone
-              </div>
-            </li>
+              <h3 className="mt-4 font-semibold text-zinc-900 dark:text-white">{s.title}</h3>
+              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">{s.desc}</p>
+            </motion.li>
           ))}
         </ol>
       </div>
